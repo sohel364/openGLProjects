@@ -5,6 +5,47 @@
 #include <gl/glut.h>
 #include <iostream>
 
+// Draw Point
+void DrawPoint()
+{
+    glBegin(GL_POINT);
+    glVertex2f(.1f, .5f);
+    glEnd();
+}
+
+// Draw Lines
+void DrawLines()
+{
+	glBegin(GL_LINES);
+	glVertex2f(0, 0);
+	glVertex2f(0, 1);
+
+    glVertex2f(0, 0);
+    glVertex2f(0, -1);
+
+	glVertex2f(0, 0);
+	glVertex2f(-1, 0);
+
+	glVertex2f(0, 0);
+	glVertex2f(1, 0);
+
+	glVertex2f(0, 1);
+	glVertex2f(0, 0);
+
+	glEnd();
+}
+
+// Draw a triangle
+void DrawTringle()
+{
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex2f(-0.5f, -0.5f);
+	glVertex2f(0.0f, 0.5f);
+	glVertex2f(0.5f, -0.5f);
+	glEnd();
+}
+
 // Create window with GLFW Window
 int CreateWindowWithGLFW()
 {
@@ -25,18 +66,16 @@ int CreateWindowWithGLFW()
     /* Make the window's context current */
     glfwMakeContextCurrent(window); 
 
+    std::cout << "This platform supports : " << glGetString(GL_VERSION) << std::endl;
+    
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-                
-        glBegin(GL_TRIANGLES);
-        glColor3f(1.0f, 0.0f, 0.0f);
-        glVertex2f(-0.5f, -0.5f);
-        glVertex2f(0.0f, 0.5f);
-        glVertex2f(0.5f, -0.5f);
-        glEnd();
+
+        /*Test functions*/
+        DrawLines();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
@@ -50,11 +89,6 @@ int CreateWindowWithGLFW()
 
 int main(int argc, char** argv)
 {
-    glutInit(&argc, argv);
-    glutCreateWindow("GLUT");
-
-    std::cout << "This platform supports : " << glGetString(GL_VERSION) << std::endl;
-
     // Create an OpenGL window with GLFW Library
     CreateWindowWithGLFW();
 }
