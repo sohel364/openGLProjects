@@ -30,12 +30,7 @@ int CreateWindowWithGLFW()
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-        
-        glBegin(GL_LINES);
-        glVertex2f(10, 10);
-        glVertex2f(20, 20);
-        glEnd();
-        
+                
         glBegin(GL_TRIANGLES);
         glColor3f(1.0f, 0.0f, 0.0f);
         glVertex2f(-0.5f, -0.5f);
