@@ -5,12 +5,28 @@
 #include <gl/glut.h>
 #include <iostream>
 
-// Draw Point
-void DrawPoint()
+// DrawRectangle
+void DrawRectangle()
 {
-    glBegin(GL_POINT);
-    glVertex2f(.1f, .5f);
-    glEnd();
+
+	glBegin(GL_LINES);
+    
+    glVertex2f(.5, .5);
+    glVertex2f(.5, 0);
+
+    glVertex2f(0, .5);
+    glVertex2f(.5, .5);
+
+	glVertex2f(0, 0);
+	glVertex2f(.5, 0);
+
+	glVertex2f(0, 0);
+	glVertex2f(0, .5);
+
+	//glVertex2f(0, 0); 
+	//glVertex2f(0, .5);
+
+	glEnd();
 }
 
 // Draw Lines
@@ -75,7 +91,7 @@ int CreateWindowWithGLFW()
         glClear(GL_COLOR_BUFFER_BIT);
 
         /*Test functions*/
-        DrawLines();
+        DrawRectangle();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
