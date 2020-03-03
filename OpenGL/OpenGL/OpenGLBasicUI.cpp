@@ -5,10 +5,9 @@
 #include <gl/glut.h>
 #include <iostream>
 
-// DrawRectangle
+// Draw Rectangle
 void DrawRectangle()
 {
-
 	glBegin(GL_LINES);
     
     glVertex2f(.5, .5);
@@ -22,9 +21,6 @@ void DrawRectangle()
 
 	glVertex2f(0, 0);
 	glVertex2f(0, .5);
-
-	//glVertex2f(0, 0); 
-	//glVertex2f(0, .5);
 
 	glEnd();
 }
